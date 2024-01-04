@@ -48,7 +48,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('QR code scanner'),
+        backgroundColor: Colors.blue,
+      ),
     );
   }
 }
