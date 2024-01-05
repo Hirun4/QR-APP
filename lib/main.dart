@@ -47,10 +47,30 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: Text('QR code scanner'),
+        title: const Text('QR code scanner'),
         backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {});
+                },
+                child: const Text('Scan qr code')),
+            const SizedBox(
+              height: 40,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {});
+                },
+                child: const Text('Generate Qr code'))
+          ],
+        ),
       ),
     );
   }
