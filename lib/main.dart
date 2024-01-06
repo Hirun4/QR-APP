@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_app/scan_qr_code.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,7 +59,10 @@ class _HomePageState extends State<HomePage> {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  setState(() {});
+                  setState(() {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => ScanQRCode()));
+                  });
                 },
                 child: const Text('Scan qr code')),
             const SizedBox(
