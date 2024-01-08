@@ -8,8 +8,21 @@ class GenerateQRCode extends StatefulWidget {
 }
 
 class _GenerateQRCodeState extends State<GenerateQRCode> {
+  TextEditingController urlController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Generate qr code'),
+      ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [],
+          ),
+        ),
+      ),
+    );
   }
 }
