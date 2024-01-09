@@ -9,28 +9,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'QR Scanner',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -39,19 +23,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('QR code scanner'),
+        title: const Text('QR Code Scanner'),
         backgroundColor: Colors.blue,
       ),
       body: Center(
@@ -59,24 +38,23 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ScanQRCode()));
-                  });
-                },
-                child: const Text('Scan qr code')),
-            const SizedBox(
-              height: 40,
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const ScanQRCode()),
+                );
+              },
+              child: const Text('Scan QR Code'),
             ),
+            const SizedBox(height: 20),
             ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => GenerateQRCode()));
-                  });
-                },
-                child: const Text('Generate Qr code'))
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => const GenerateQRCode()),
+                );
+              },
+              child: const Text('Generate QR Code'),
+            ),
           ],
         ),
       ),
